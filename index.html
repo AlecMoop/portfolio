@@ -1,1 +1,208 @@
-here is my portfolio
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Alec Moore – UX/UI Project Gallery</title>
+  <meta name="description" content="Screenshots and short write‑ups from UX/UI projects by Alec Moore." />
+  <link rel="preload" as="image" href="images/sample-1.webp" />
+  <style>
+    :root{
+      --bg:#0b0c10; --panel:#111318; --text:#e8eaed; --muted:#a9b2be; --accent:#80e1ff; --card:#151922;
+      --radius:18px; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;background:var(--bg);color:var(--text);font:16px/1.5 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif}
+    a{color:inherit}
+    .wrap{max-width:1100px;margin-inline:auto;padding:28px}
+    header{display:flex;gap:18px;align-items:end;justify-content:space-between;margin:8px 0 24px}
+    header h1{font-size:clamp(24px,3vw,36px);margin:0}
+    header p{margin:0;color:var(--muted)}
+    .filters{display:flex;gap:10px;flex-wrap:wrap}
+    .chip{background:transparent;border:1px solid #2a2f3a;color:var(--muted);padding:6px 10px;border-radius:999px;cursor:pointer}
+    .chip[aria-pressed="true"]{background:#1a2230;color:var(--text);border-color:#2d3748}
+
+    /* Masonry-like responsive grid using CSS grid */
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+
+    .card{background:var(--card);border:1px solid #232838;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+    .thumb{aspect-ratio:16/10;display:block;width:100%;object-fit:cover;background:#0f1117}
+    .content{padding:14px 14px 16px}
+    .title{font-weight:650;margin:0 0 6px}
+    .meta{display:flex;gap:10px;flex-wrap:wrap;font-size:.85rem;color:var(--muted);margin-bottom:8px}
+    .desc{margin:0;color:#d6dae0}
+    .tags{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
+    .tag{font-size:.78rem;background:#1c2331;color:#c7d2e1;border:1px solid #283044;border-radius:999px;padding:3px 8px}
+    .footer{margin-top:auto;padding:12px 14px;border-top:1px solid #232838;display:flex;justify-content:space-between;align-items:center}
+    .btn{border:1px solid #2a3346;background:#151c2b;color:#e5ecf7;padding:6px 10px;border-radius:10px;text-decoration:none}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;padding:20px}
+    .lightbox.open{display:flex}
+    .lightbox figure{max-width:min(1200px,92vw);max-height:90vh;margin:0}
+    .lightbox img{max-width:100%;max-height:80vh;width:auto;height:auto;border-radius:12px;display:block}
+    .lightbox figcaption{color:#e8eaed;margin-top:10px;font-size:.95rem}
+    .lb-nav{position:absolute;inset:auto 0 24px;display:flex;justify-content:center;gap:10px}
+    .lb-btn{background:#1b2433;border:1px solid #2d3a52;color:#e8eaed;padding:8px 12px;border-radius:10px}
+
+    footer.site{color:var(--muted);text-align:center;margin:32px 0 8px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>UX/UI Projects</h1>
+        <p>Short case-study snapshots. Click any image for full view.</p>
+      </div>
+      <nav class="filters" aria-label="Filter projects">
+        <button class="chip" aria-pressed="true" data-filter="all">All</button>
+        <button class="chip" data-filter="mobile">Mobile</button>
+        <button class="chip" data-filter="web">Web</button>
+        <button class="chip" data-filter="dashboard">Dashboard</button>
+        <button class="chip" data-filter="ecommerce">E‑commerce</button>
+      </nav>
+    </header>
+
+    <main class="grid" id="grid" aria-live="polite">
+      <!-- Duplicate a .card block per project. Replace image/src/alt and text. -->
+      <article class="card" data-kind="mobile">
+        <button class="imgButton" data-lb-title="Route Generator – Mobile App" data-lb-src="images/sample-1.webp" aria-label="Open full screenshot: Route Generator – Mobile App">
+          <img class="thumb" src="images/sample-1.webp" alt="Route Generator mobile app prototype showing map with randomized route options" loading="lazy" width="640" height="400">
+        </button>
+        <div class="content">
+          <h2 class="title">Route Generator – Mobile Prototype</h2>
+          <div class="meta">
+            <span>Role: UI / Interaction</span>
+            <span>Tools: Figma</span>
+            <span>Focus: flows, heuristics</span>
+          </div>
+          <p class="desc">Designed flows to quickly generate randomized walking/running routes with adjustable distance, elevation, and surface filters. Applied Nielsen heuristics and Gestalt principles to reduce cognitive load.</p>
+          <div class="tags">
+            <span class="tag">Figma</span><span class="tag">User flows</span><span class="tag">Usability testing</span>
+          </div>
+        </div>
+        <div class="footer">
+          <a class="btn" href="#" aria-disabled="true">Case study (optional)</a>
+          <span class="meta">2025</span>
+        </div>
+      </article>
+
+      <article class="card" data-kind="web">
+        <button class="imgButton" data-lb-title="E‑commerce Checkout – Web" data-lb-src="images/sample-2.webp" aria-label="Open full screenshot: E‑commerce Checkout – Web">
+          <img class="thumb" src="images/sample-2.webp" alt="Web checkout redesign with simplified form and progress indicator" loading="lazy" width="640" height="400">
+        </button>
+        <div class="content">
+          <h2 class="title">Checkout Flow Simplification</h2>
+          <div class="meta"><span>Role: UX</span><span>Tools: Figma</span><span>Focus: conversion</span></div>
+          <p class="desc">Reduced form fields by 32% and clarified progress indicators; introduced inline validation and address autocomplete to speed completion.</p>
+          <div class="tags"><span class="tag">Form design</span><span class="tag">A11y</span><span class="tag">Heuristics</span></div>
+        </div>
+        <div class="footer"><a class="btn" href="#" aria-disabled="true">Case study (optional)</a><span class="meta">2024</span></div>
+      </article>
+
+      <article class="card" data-kind="dashboard">
+        <button class="imgButton" data-lb-title="Operations Dashboard" data-lb-src="images/sample-3.webp" aria-label="Open full screenshot: Operations Dashboard">
+          <img class="thumb" src="images/sample-3.webp" alt="Analytics dashboard with cards and charts emphasizing readability" loading="lazy" width="640" height="400">
+        </button>
+        <div class="content">
+          <h2 class="title">Operations Dashboard</h2>
+          <div class="meta"><span>Role: UI</span><span>Tools: Figma</span><span>Focus: info hierarchy</span></div>
+          <p class="desc">Established a clear visual hierarchy with card groups and semantic color. Emphasized scannability and keyboard navigation for power users.</p>
+          <div class="tags"><span class="tag">Grid</span><span class="tag">Cards</span><span class="tag">Keyboard‑first</span></div>
+        </div>
+        <div class="footer"><a class="btn" href="#" aria-disabled="true">Case study (optional)</a><span class="meta">2024</span></div>
+      </article>
+
+      <!-- Add more .card blocks as needed -->
+    </main>
+
+    <footer class="site">
+      <p>© <span id="year"></span> Alec Moore • <a href="mailto:your.email@example.com">your.email@example.com</a> • <a href="resume.pdf">Resume (PDF)</a></p>
+    </footer>
+  </div>
+
+  <!-- Accessible JS lightbox + filtering, no dependencies -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-hidden="true">
+    <figure>
+      <img id="lbImg" alt="Expanded project screenshot" />
+      <figcaption id="lbCap"></figcaption>
+    </figure>
+    <div class="lb-nav">
+      <button class="lb-btn" id="closeLb" aria-label="Close full view (Esc)">Close</button>
+      <a class="lb-btn" id="downloadLb" href="#" download>Download image</a>
+    </div>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple filter chips
+    const chips = document.querySelectorAll('.chip');
+    const grid = document.getElementById('grid');
+    chips.forEach(chip=>{
+      chip.addEventListener('click',()=>{
+        chips.forEach(c=>c.setAttribute('aria-pressed','false'));
+        chip.setAttribute('aria-pressed','true');
+        const kind = chip.dataset.filter;
+        grid.querySelectorAll('.card').forEach(card=>{
+          const show = kind==='all' || card.dataset.kind===kind;
+          card.style.display = show ? '' : 'none';
+        });
+      });
+    });
+
+    // Lightbox
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCap = document.getElementById('lbCap');
+    const download = document.getElementById('downloadLb');
+    const closeBtn = document.getElementById('closeLb');
+    let lastFocus = null;
+
+    function openLb(src, title){
+      lastFocus = document.activeElement;
+      lb.classList.add('open');
+      lb.removeAttribute('aria-hidden');
+      lbImg.src = src; download.href = src; lbCap.textContent = title || '';
+      closeBtn.focus();
+      document.addEventListener('keydown', onEsc);
+    }
+    function closeLb(){
+      lb.classList.remove('open');
+      lb.setAttribute('aria-hidden','true');
+      lbImg.removeAttribute('src');
+      document.removeEventListener('keydown', onEsc);
+      if(lastFocus) lastFocus.focus();
+    }
+    function onEsc(e){ if(e.key==='Escape') closeLb(); }
+
+    document.querySelectorAll('.imgButton').forEach(btn=>{
+      btn.addEventListener('click',()=> openLb(btn.dataset.lbSrc, btn.dataset.lbTitle));
+      btn.classList.add('thumbWrap');
+      btn.style.padding=0; btn.style.margin=0; btn.style.border='none'; btn.style.background='transparent'; btn.style.cursor='zoom-in';
+    });
+    lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLb(); });
+    closeBtn.addEventListener('click', closeLb);
+  </script>
+
+  <!-- Optional: JSON-LD so your projects show nicely when linked/searchable -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Alec Moore – UX/UI Project Gallery",
+    "hasPart": [
+      {
+        "@type": "CreativeWork",
+        "name": "Route Generator – Mobile Prototype",
+        "description": "Randomized route generator with adjustable constraints and usability‑tested flows.",
+        "image": ["images/sample-1.webp"],
+        "keywords": "Figma, user flows, Nielsen heuristics, Gestalt"
+      }
+    ]
+  }
+  </script>
+</body>
+</html>
