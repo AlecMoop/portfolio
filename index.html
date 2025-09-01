@@ -6,7 +6,7 @@
   <title>Alec Moore – UX/UI Project Gallery</title>
   <link rel="icon" href="images/favicon.png">
   <meta name="description" content="Screenshots and short write‑ups from UX/UI projects by Alec Moore." />
-  <link rel="preload" as="image" href="images/sample-1.webp" />
+  <link rel="preload" as="image" href="images/capsort1.png" />
   <link rel="stylesheet" href="styles/main.css" />
 </head>
 <body>
@@ -28,9 +28,22 @@
 
     <main class="grid" id="grid" aria-live="polite">
       <article class="card" data-kind="mobile">
-        <button class="imgButton" data-lb-title="Route Generator – Mobile App" data-lb-src="images/sample-1.webp" aria-label="Open full screenshot: Route Generator – Mobile App">
-          <img class="thumb" src="images/sample-1.webp" alt="Route Generator mobile app prototype showing map with randomized route options" loading="lazy" width="640" height="400">
+        <button class="imgButton" data-lb-title="" data-lb-src="images/capsort/capsort1.png" aria-label="Open full screenshot">
+          <img class="thumb" src="images/capsort/capsort1.png" alt="" loading="lazy" width="640" height="400">
         </button>
+
+        <!-- <div class="gallery" data-images='["images/cap4.jpg","images/cap5.jpg","images/cap6.jpg","images/cap7.jpg","images/cap8.jpg","images/cap9.jpg","images/cap10.jpg","images/cap11.jpg"]' aria-label="CapSort screenshots">
+          <button class="g-prev" aria-label="Previous image">‹</button>
+          <button class="g-next" aria-label="Next image">›</button>
+
+          <button class="g-main" aria-label="Open full screenshot of CapSort">
+            <img class="thumb" alt="CapSort – key screen">
+          </button>
+
+          <div class="g-thumbs" role="group" aria-label="Thumbnails">
+          </div>
+        </div> -->
+
         <div class="content">
           <h2 class="title">CapSort</h2>
           <h3 class="subtitle">Full-stack web app for desktop</h3>
@@ -55,8 +68,8 @@
       </article>
 
       <article class="card" data-kind="web">
-        <button class="imgButton" data-lb-title="E‑commerce Checkout – Web" data-lb-src="images/sample-2.webp" aria-label="Open full screenshot: E‑commerce Checkout – Web">
-          <img class="thumb" src="images/sample-2.webp" alt="Web checkout redesign with simplified form and progress indicator" loading="lazy" width="640" height="400">
+        <button class="imgButton" data-lb-title="" data-lb-src="images/routeshuffle/route1.png" aria-label="Open full screenshot">
+          <img class="thumb" src="images/routeshuffle/route1.png" alt="" loading="lazy" width="640" height="400">
         </button>
         <div class="content">
           <h2 class="title">RouteShuffle</h2>
@@ -81,8 +94,8 @@
       </article>
 
       <article class="card" data-kind="dashboard">
-        <button class="imgButton" data-lb-title="Operations Dashboard" data-lb-src="images/sample-3.webp" aria-label="Open full screenshot: Operations Dashboard">
-          <img class="thumb" src="images/sample-3.webp" alt="Analytics dashboard with cards and charts emphasizing readability" loading="lazy" width="640" height="400">
+        <button class="imgButton" data-lb-title="" data-lb-src="images/bike-minded/bike1.png" aria-label="Open full screenshot">
+          <img class="thumb" src="images/bike-minded/bike1.png" alt="" loading="lazy" width="640" height="400">
         </button>
         <div class="content">
           <h2 class="title">Bike-Minded</h2>
@@ -177,24 +190,6 @@
     });
     lb.addEventListener('click', (e)=>{ if(e.target===lb) closeLb(); });
     closeBtn.addEventListener('click', closeLb);
-  </script>
-
-  <!-- Optional: JSON-LD so projects show nicely when linked/searchable -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Alec Moore – UX/UI Project Gallery",
-    "hasPart": [
-      {
-        "@type": "CreativeWork",
-        "name": "Route Generator – Mobile Prototype",
-        "description": "Randomized route generator with adjustable constraints and usability‑tested flows.",
-        "image": ["images/sample-1.webp"],
-        "keywords": "Figma, user flows, Nielsen heuristics, Gestalt"
-      }
-    ]
-  }
   </script>
 </body>
 </html>
