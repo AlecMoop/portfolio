@@ -192,7 +192,8 @@ header p{
 .lightbox figcaption{
   color:#e8eaed;
   margin-top:10px;
-  font-size:.95rem
+  font-size:.95rem;
+  text-align:center
 }
 
 .lb-nav{
@@ -200,7 +201,19 @@ header p{
   inset:auto 0 24px;
   display:flex;
   justify-content:center;
-  gap:10px
+  gap:10px;
+  align-items:center
+}
+
+/* #lbCount{
+  min-width:70px;
+  text-align:center;
+  opacity:.8
+} */
+
+#lbCount{
+  margin-right:10px;
+  opacity:.85;
 }
 
 .lb-btn{
@@ -215,4 +228,36 @@ footer.site{
   color:var(--muted);
   text-align:center;
   margin:32px 0 8px
+}
+
+/* Arrows */
+.lb-arrow{
+  position:absolute; top:50%; transform:translateY(-50%);
+  width:48px; height:48px; border-radius: 999px;
+  display:flex; align-items:center; justify-content:center;
+  background:rgba(27,36,51,.9);
+  border:1px solid #2d3a52; color:#e8eaed; font-size:28px; line-height:1;
+  cursor:pointer; user-select:none;
+}
+.lb-left  { left: 16px;  }
+.lb-right { right: 16px; }
+
+.lb-arrow:hover, .lb-arrow:focus,
+.lb-close:hover, .lb-close:focus { outline:2px solid #80e1ff; }
+
+/* Close (X) */
+.lb-close{
+  position:absolute; top:16px; right:16px;
+  width:42px; height:42px; border-radius: 999px;
+  background:rgba(27,36,51,.9);
+  border:1px solid #2d3a52; color:#e8eaed;
+  font-size:26px; line-height:1; cursor:pointer;
+}
+
+
+/* Small screens: keep buttons clear of notches/edges */
+@media (max-width: 520px){
+  .lb-left{ left: 8px; } .lb-right{ right: 8px; }
+  .lb-arrow{ width:44px; height:44px; font-size:24px; }
+  .lb-close{ top:10px; right:10px; width:38px; height:38px; font-size:22px; }
 }
